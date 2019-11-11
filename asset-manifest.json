@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/mosaics/static/css/main.7b553b66.chunk.css",
+    "main.js": "/mosaics/static/js/main.05168e4e.chunk.js",
+    "main.js.map": "/mosaics/static/js/main.05168e4e.chunk.js.map",
+    "runtime-main.js": "/mosaics/static/js/runtime-main.eb78c115.js",
+    "runtime-main.js.map": "/mosaics/static/js/runtime-main.eb78c115.js.map",
+    "static/js/2.7ebd0d12.chunk.js": "/mosaics/static/js/2.7ebd0d12.chunk.js",
+    "static/js/2.7ebd0d12.chunk.js.map": "/mosaics/static/js/2.7ebd0d12.chunk.js.map",
+    "index.html": "/mosaics/index.html",
+    "precache-manifest.38ee8fc5383692c4d6e3c58372bce65e.js": "/mosaics/precache-manifest.38ee8fc5383692c4d6e3c58372bce65e.js",
+    "service-worker.js": "/mosaics/service-worker.js",
+    "static/css/main.7b553b66.chunk.css.map": "/mosaics/static/css/main.7b553b66.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eb78c115.js",
+    "static/js/2.7ebd0d12.chunk.js",
+    "static/css/main.7b553b66.chunk.css",
+    "static/js/main.05168e4e.chunk.js"
+  ]
+}
