@@ -1,0 +1,16 @@
+@import '../../assets/variables';
+
+$square-background: rgb(223, 24, 156);
+
+.board {
+  width: 100%; 
+  box-sizing: border-box;
+  display: grid;
+  /* Define Auto Row size */
+  grid-auto-rows: 200px; 
+  /*Define our columns */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+  grid-gap:0;
+  padding: 0.35rem;
+  padding-top: 1rem;
+}

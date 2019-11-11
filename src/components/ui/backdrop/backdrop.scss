@@ -1,0 +1,12 @@
+.backdrop {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  transition: background-color 300ms ease-in-out;
+  &--show {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}

@@ -1,0 +1,54 @@
+@import '../../assets/variables';
+
+// $square-background: rgb(223, 24, 156);
+
+
+.square {
+  --background-color: rgb(223, 24, 156);
+  background-color: var(--background-color);
+  border: 1px solid $main-black;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  position: relative;
+  transition: all 100ms ease-in-out;
+  &__header {
+    transform: translateY(0);
+    transition: all 250ms ease-in-out;
+  }
+  &__category {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 300ms ease-in-out;
+  }
+  &__tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 350ms ease-in-out;
+  }
+  &__tag {
+    margin-right: 0.5rem;
+  }
+  &:hover {
+    background-color: var(--background-color);
+    border-color: var(--background-color);
+    z-index: 200;
+    & .square__category, .square__tags {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    & .square__header {
+      transform: translateY(30px);
+    }
+  }
+  &__label {
+    font-size: calc( 16px + (24 - 12) * ( (100vw - 400px) / ( 800 - 400) ));
+  }
+}
