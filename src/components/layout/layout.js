@@ -14,7 +14,6 @@ class Layout extends Component {
         <main className={classes.content}>
           {this.props.children}
         </main>
-        <Toolbox />
         <div>footer</div>
       </AuxWrapper>
     );

@@ -7,7 +7,7 @@ class Toolbox extends Component {
   render() {
     return (
       <div className="toolbox">
-        <button className="toolbox__button">+</button>
+        <button className="toolbox__button" onClick={this.props.newSquare}>+</button>
         <button className="toolbox__button">-</button>
       </div>
     )

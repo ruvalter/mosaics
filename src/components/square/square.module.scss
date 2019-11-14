@@ -2,9 +2,26 @@
 
 // $square-background: rgb(223, 24, 156);
 
+.square {
+  &__sign {
+    &_top {
+      width: 30px;
+      height: 30px;
+      border: 3px solid white;
+    }
+    &_bottom {
+      width: 50px;
+      height: 50px;
+      border: 4px solid white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 300ms ease-in-out;
+    }
+  }
+}
 
 .square {
-  --background-color: rgb(223, 24, 156);
   background-color: var(--background-color);
   border: 1px solid $main-black;
   box-sizing: border-box;
@@ -13,9 +30,17 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
   padding: 1rem;
   position: relative;
   transition: all 100ms ease-in-out;
+  &__signs {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    opacity: 0;
+    transition: all 300ms ease;
+  }
   &__header {
     transform: translateY(0);
     transition: all 250ms ease-in-out;
@@ -30,16 +55,34 @@
     flex-direction: row;
     justify-content: flex-start;
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
     transition: all 350ms ease-in-out;
   }
   &__tag {
     margin-right: 0.5rem;
   }
   &:hover {
-    background-color: var(--background-color);
-    border-color: var(--background-color);
-    z-index: 200;
+    
+    & .square__signs {
+      top: 20px;
+      right: 40px;
+      opacity: 1;
+    }
+    & .square__sign {
+      &_top {
+        width: 30px;
+        height: 30px;
+        border: 3px solid white;
+      }
+      &_bottom {
+        width: 50px;
+        height: 50px;
+        border: 4px solid white;
+        position: absolute;
+        top: 10px;
+        left: 10px
+      }
+    }
     & .square__category, .square__tags {
       opacity: 1;
       transform: translateY(0);
