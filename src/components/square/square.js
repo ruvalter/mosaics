@@ -1,10 +1,13 @@
 import React from 'react';
+import styled from 'styled-components'
 import classes from './square.module.scss';
 
-
+const Container = styled.div`
+  border-radius: 3px;
+`
 
 const square = (props) => (
-  <div 
+  <Container
     className={classes.square}
     onClick={props.select}
     onMouseOver={props.show}
@@ -29,7 +32,7 @@ const square = (props) => (
         )) : null
       }
     </div>
-  </div>
+  </Container>
 );
  
 export default square;

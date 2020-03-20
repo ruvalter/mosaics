@@ -17,95 +17,6 @@ class Board extends Component {
     squares: null
   }
 
-  // [
-  //   {
-  //     label: 'Javascript',
-  //     text: "Lorem ipsum",
-  //     category: 'framework',
-  //     tags: ['js', 'frontend'],
-  //     color: '#ffbd03',
-  //     frequency: 40,
-  //     importancy: 70,
-  //     relevancy: 20
-  //   },
-  //   {
-  //     label: 'Angular',
-  //     text: "Lorem ipsum",
-  //     category: 'framework',
-  //     tags: ['js', 'frontend'],
-  //     color: '#ffbd03',
-  //     frequency: 40,
-  //     importancy: 70,
-  //     relevancy: 20
-  //   },
-  //   {
-  //     id: 3,
-  //     label: 'Stencil',
-  //     text: "Lorem ipsum",
-  //     category: 'framework',
-  //     tags: ['js', 'frontend'],
-  //     color: '#ffbd03',
-  //     frequency: 40,
-  //     importancy: 70,
-  //     relevancy: 20
-  //   },
-  //   {
-  //     id: 4,
-  //     label: 'Vue',
-  //     text: "Lorem ipsum",
-  //     category: 'framework',
-  //     tags: ['js', 'frontend'],
-  //     color: '#ffbd03',
-  //     frequency: 40,
-  //     importancy: 70,
-  //     relevancy: 20
-  //   },
-  //   {
-  //     id: 5,
-  //     label: 'Backbone',
-  //     text: "Lorem ipsum",
-  //     category: 'library',
-  //     tags: ['js', 'frontend'],
-  //     color: 'green',
-  //     frequency: 40,
-  //     importancy: 70,
-  //     relevancy: 20
-  //   },
-  //   {
-  //     id: 6,
-  //     label: 'Transloco',
-  //     text: "Lorem ipsum",
-  //     category: 'library',
-  //     tags: ['js', 'frontend'],
-  //     color: 'green',
-  //     frequency: 40,
-  //     importancy: 70,
-  //     relevancy: 20
-  //   },
-  //   {
-  //     id: 7,
-  //     label: 'Lodash',
-  //     text: "Lorem ipsum",
-  //     category: 'library',
-  //     tags: ['js', 'frontend'],
-  //     color: 'green',
-  //     frequency: 40,
-  //     importancy: 70,
-  //     relevancy: 20
-  //   },
-  //   {
-  //     id: 8,
-  //     label: 'React',
-  //     text: "Lorem ipsum",
-  //     category: 'library',
-  //     tags: ['js', 'frontend'],
-  //     color: 'green',
-  //     frequency: 40,
-  //     importancy: 70,
-  //     relevancy: 20
-  //   }
-  // ]
-
   componentDidMount() {
     this.fetchSquares()
   }
@@ -114,7 +25,8 @@ class Board extends Component {
     axios.get('https://mosaic-squares.firebaseio.com/squares.json')
       .then(response => {
         console.log(response.data)
-        const array = Object.keys(response.data).map(key => response.data[key]);
+        const array = Object.keys(response.data).map(key => ({id: key, ...response.data[key]}));
+        console.log('arr', array)
         this.setState({squares: [...array]})
       })
       .catch(error => console.log('Error fetching'))
@@ -143,7 +55,8 @@ class Board extends Component {
   squareCloseHandler = () => {
     console.log('clicked')
     this.setState({showDetails: false});
-    // this.fetchSquares();
+    setTimeout(() => this.fetchSquares(), 1000 ) // Learn how to call this from child
+    
   }
 
   render() {

@@ -9,6 +9,7 @@ class SquareDetail extends Component {
     super(props);
 
     this.state = {
+      id: props.square.id || null,
       label: props.square.label || '',
       text: props.square.text || 'some text',
       category: props.square.category || 'framework',
@@ -22,12 +23,24 @@ class SquareDetail extends Component {
     const square = {
       ...this.state
     };
-    axios.post('/squares.json', square)
+    
+    console.log('state', square)
+    if (square.id) {
+      axios.put('/squares/' + square.id +'/.json', square)
       .then(response => {
         console.log(response);
         
       })
       .catch(error => console.log('Error catched:', error))
+    } else {
+      axios.post('/squares/.json', square)
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => console.log('Error catched:', error))
+    }
+    
+    
   }
 
   closeDetails = () => {
