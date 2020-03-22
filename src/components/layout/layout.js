@@ -10,11 +10,11 @@ class Layout extends Component {
   render () {
     return (
       <AuxWrapper>
-        <Topbar/>
+        {/* <Topbar/> */}
         <main className={classes.content}>
           {this.props.children}
         </main>
-        <div>footer</div>
+        {/* <div>footer</div> */}
       </AuxWrapper>
     );
   }

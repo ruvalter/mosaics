@@ -1,40 +1,27 @@
 @import '../../assets/variables';
-.toolbox {
-  align-items: flex-end;
-  border-radius: 40px;
-  background: $main-black;
-  box-shadow: -3px 0px 10px -1px rgba(97, 93, 97, 0.69);
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 5rem;
-  right: 0;
-  position: fixed;
-  padding: 2rem 1rem;
-  transform: translateX(38px);
-  transition: transform 300ms ease-in-out;
+.button {
+  border-radius: 50%;
+  border: none;
+  background: #f9f6f67a;
   bottom: 1rem;
-  z-index: 210;
+  box-shadow: -3px 0px 10px -1px rgba(97, 93, 97, 0.69);
+  color: #ffffffc4;
+  cursor: pointer;
+  font-size: 1rem;
+  position: fixed;
+  padding: 1rem;
+  right: 1rem;
+  z-index: 90;
+  width: 3rem;
+  height: 3rem;
+  transition: all 300ms ease-in-out;
   &:hover {
-    transform: translateX(10px);
-    & .toolbox__button {
-      opacity: 1;
-    }
+    background-color: white;
+    color: black;
   }
-  &__button {
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    background-color: transparent;
-    font-size: 1rem;
-    color: white;
-    cursor: pointer;
-    opacity: 0;
-    transition: all 300ms ease-in-out;
-    &:hover {
-      background-color: white;
-      color: black;
-    }
+  &__icon {
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
   }
 }
