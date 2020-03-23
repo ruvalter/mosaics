@@ -28,7 +28,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/index.html",
+  "start_url": "https://ruvalter.github.io/mosaics/",
   "display": "standalone",
   "theme_color": "#232020",
   "background_color": "#232020"
